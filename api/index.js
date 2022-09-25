@@ -15,7 +15,6 @@ const getData = () => {
     }).then(res => {
         if (res.status == 200) {
             let data = res.data || {};
-            // console.log(data);
             // let name =Moment().format('YYYY-MM-DD HH:mm:ss');
             let name = data.data.lastUpdateTime || ""
             try {

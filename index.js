@@ -10,6 +10,8 @@ app.use(logger(str => {
     console.log(Moment().format('YYYY-MM-DD HH:mm:ss') + str)
   }))
 // app.use(cors())
+const {scheduleCronstyle} = require("./schedule/index")
+scheduleCronstyle()
 const getData = require("./router/getData")
 router.use("/getData", getData)
 app.use(router.routes()); //作用：启动路由
