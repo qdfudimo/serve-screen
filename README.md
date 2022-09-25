@@ -12,7 +12,7 @@ npm install
 
 ### 本地开发
 ```
-npm run serve
+npm run dev
 ```
 
 
