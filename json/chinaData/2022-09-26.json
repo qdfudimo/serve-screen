@@ -1,4 +1,12 @@
 {
+	"today": {
+		"input": 118,
+		"noSymptom": 704,
+		"storeConfirm": 77245,
+		"confirm": 78885,
+		"dead": 102,
+		"heal": 1538
+	},
 	"total": {
 		"confirm": 6912675,
 		"suspect": 0,
@@ -8,16 +16,6 @@
 		"input": 23809,
 		"storeConfirm": 6546943,
 		"noSymptom": 11333
-	},
-	"today": {
-		"confirm": 78885,
-		"suspect": null,
-		"heal": 1538,
-		"dead": 102,
-		"severe": null,
-		"storeConfirm": 77245,
-		"input": 118,
-		"noSymptom": 704
 	},
 	"chinaDayList": [
 		{
@@ -1402,5 +1400,5 @@
 		}
 	],
 	"lastUpdateTime": "2022-09-26 09:28:35",
-	"overseaLastUpdateTime": "2022-09-26 10:45:36"
+	"overseaLastUpdateTime": "2022-09-26 12:35:38"
 }

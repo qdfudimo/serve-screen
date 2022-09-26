@@ -31,11 +31,26 @@ const getData = () => {
                 } = chinaTotal;
                 today.noSymptom = extData.incrNoSymptom || 0
                 //现有确诊数=累计确诊数-累计死亡数-累计治愈数
-                total.storeConfirm = total.confirm - total.dead - total.heal
-                total.noSymptom = extData.noSymptom || 0
+                total.storeConfirm = total.confirm - total.dead - total.heal;
+                total.noSymptom = extData.noSymptom || 0;
+                let {
+                    input=0,
+                    noSymptom=0,
+                    storeConfirm=0,
+                    confirm=0,
+                    dead=0,
+                    heal=0
+                } = today
                 let chinaTodyData = {
+                    today: {
+                        input,
+                        noSymptom,
+                        storeConfirm,
+                        confirm,
+                        dead,
+                        heal,
+                    },
                     total,
-                    today,
                     chinaDayList,
                     lastUpdateTime,
                     overseaLastUpdateTime: overseaLastUpdateTime
