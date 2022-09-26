@@ -52,6 +52,16 @@ const getData = () => {
                     });
                     areaTree.splice(index, 1)
                     areaTree.sort((a, b) => b.today.confirm - a.today.confirm)
+                    if (chinaCityData.children && chinaCityData.children.length) {
+                        chinaCityData.children = chinaCityData.children.map(item => {
+                            let {
+                                children,
+                                ...list
+                            } = item
+                            return list
+                        })
+                        chinaCityData.children.sort((a, b) => b.today.confirm - a.today.confirm)
+                    }
                     let areaTreeList = areaTree.slice(0, 30);
                     areaList = {
                         chinaCityData,

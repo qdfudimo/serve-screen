@@ -2,14 +2,45 @@ const schedule = require('node-schedule');
 const {
     getData
 } = require("../api")
+const {
+    formatBeforetTime
+} = require("../util/moment")
+const {
+    checkDirFile,
+    emptyDir,
+} = require("../util/index")
+/**
+ * 定时任务调接口
+ */
 function scheduleCronstyle() {
     schedule.scheduleJob('30 0 10 * * *', function () {
         console.log('scheduleCronstyle:' + new Date());
         getData()
     });
+    schedule.scheduleJob('30 0 14 * * *', function () {
+        console.log('scheduleCronstyle:' + new Date());
+        getData()
+    });
+}
+/**
+ * 定时任务删除上一天json文件
+ */
+function scheduleDelFile() {
+    schedule.scheduleJob('30 0 16 * * *', function () {
+        let fileName = formatBeforetTime();
+        if (checkDirFile("areaData", fileName)) {
+            emptyDir("areaData", fileName)
+            console.log(`删除文件areaData${fileName}`);
+        }
+        if (checkDirFile("chinaData", fileName)) {
+            emptyDir("chinaData", fileName)
+            console.log(`删除文件chinaData${fileName}`);
+        }
+    });
 }
 module.exports = {
-    scheduleCronstyle
+    scheduleCronstyle,
+    scheduleDelFile
 }
 /**
  * *  *  *  *  *  *

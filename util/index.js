@@ -1,6 +1,3 @@
-const {
-  formatTime
-} = require("./moment")
 const fs = require('fs')
 const path = require('path')
 /**
@@ -49,9 +46,23 @@ function redDirFile(file, fileName) {
     console.log(error);
   }
 }
-
+/**
+ * 删除文件夹下指定文件
+ * @param {*} path 
+ */
+function emptyDir(file, fileName) {
+  const configFile = path.resolve(__dirname, `../json/${file}/${fileName}.json`)
+  //返回文件夹下所有文件
+  // const files = fs.readdirSync(path); 
+  // const filePath = `${path}/${file}`;
+  //返回文件信息
+  // const stats = fs.statSync(filePath);
+  fs.unlinkSync(configFile);
+  console.log(`删除${file}/${fileName}文件成功`);
+}
 module.exports = {
   writeFileData,
   redDirFile,
+  emptyDir,
   checkDirFile
 }

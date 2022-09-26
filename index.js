@@ -12,6 +12,7 @@ app.use(logger(str => {
 // app.use(cors())
 const {scheduleCronstyle} = require("./schedule/index")
 // scheduleCronstyle()
+// scheduleDelFile()
 const worldData = require("./router/worldData")
 const chinaData = require("./router/chinaData")
 router.use("/chinaDayList", chinaData)
@@ -28,5 +29,5 @@ router.allowedMethods()中间件，主要用于 405 Method Not Allowed 这个状
 // app.use(router.routes()).use(router.allowedMethods())
 //监听4001
 app.listen(4001, () => {
-    console.log('starting at port 4000');
+    console.log('starting at port 4001');
 })
