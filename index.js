@@ -11,9 +11,11 @@ app.use(logger(str => {
   }))
 // app.use(cors())
 const {scheduleCronstyle} = require("./schedule/index")
-scheduleCronstyle()
-const getData = require("./router/getData")
-router.use("/getData", getData)
+// scheduleCronstyle()
+const worldData = require("./router/worldData")
+const chinaData = require("./router/chinaData")
+router.use("/chinaDayList", chinaData)
+router.use("/worldDayList", worldData)
 app.use(router.routes()); //作用：启动路由
 app.use(router.allowedMethods());
 /* 作用：这是官方文档的推荐用法,我们可以看到router.allowedMethods()用在了路由匹配
@@ -24,7 +26,7 @@ router.allowedMethods()中间件，主要用于 405 Method Not Allowed 这个状
 提示 request method 不匹配，并在响应头返回接口支持的请求方法，更有利于调试
 */
 // app.use(router.routes()).use(router.allowedMethods())
-//监听4000
-app.listen(4000, () => {
+//监听4001
+app.listen(4001, () => {
     console.log('starting at port 4000');
 })
