@@ -3,7 +3,8 @@ const {
     getData
 } = require("../api")
 const {
-    formatBeforetTime
+    formatBeforetTime,
+    formatTime
 } = require("../util/moment")
 const {
     checkDirFile,
@@ -26,16 +27,20 @@ function scheduleCronstyle() {
  * 定时任务删除上一天json文件
  */
 function scheduleDelFile() {
-    schedule.scheduleJob('30 0 16 * * *', function () {
+    schedule.scheduleJob('30 3 16 * * *', function () {
         let fileName = formatBeforetTime();
-        if (checkDirFile("areaData", fileName)) {
+        let fileNamepre = formatTime();
+        if (checkDirFile("areaData", fileNamepre) && checkDirFile("areaData", fileName)) {
             emptyDir("areaData", fileName)
             console.log(`删除文件areaData${fileName}`);
+        }else {
+            console.log(`没有删除文件areaData`);
         }
-        if (checkDirFile("chinaData", fileName)) {
+        if (checkDirFile("chinaData", fileNamepre) && checkDirFile("chinaData", fileName)) {
             emptyDir("chinaData", fileName)
             console.log(`删除文件chinaData${fileName}`);
         }
+
     });
 }
 module.exports = {

@@ -1,46 +1,23 @@
 {
 	"today": {
-		"input": 118,
-		"noSymptom": 704,
-		"storeConfirm": 77245,
-		"confirm": 78885,
-		"dead": 102,
-		"heal": 1538
+		"input": 132,
+		"noSymptom": 723,
+		"storeConfirm": 68204,
+		"confirm": 69284,
+		"dead": 112,
+		"heal": 968
 	},
 	"total": {
-		"confirm": 6912675,
+		"confirm": 6942179,
 		"suspect": 0,
-		"heal": 339556,
-		"dead": 26176,
+		"heal": 339982,
+		"dead": 26244,
 		"severe": 0,
-		"input": 23809,
-		"storeConfirm": 6546943,
-		"noSymptom": 11333
+		"input": 23881,
+		"storeConfirm": 6575953,
+		"noSymptom": 11152
 	},
 	"chinaDayList": [
-		{
-			"date": "2022-07-29",
-			"today": {
-				"confirm": 24249,
-				"suspect": 1,
-				"heal": 0,
-				"dead": 0,
-				"severe": null,
-				"storeConfirm": 0,
-				"input": 51
-			},
-			"total": {
-				"confirm": 5130275,
-				"suspect": 0,
-				"heal": 304208,
-				"dead": 23563,
-				"severe": null,
-				"input": 20633,
-				"storeConfirm": 4802504
-			},
-			"extData": null,
-			"lastUpdateTime": null
-		},
 		{
 			"date": "2022-07-30",
 			"today": {
@@ -1397,8 +1374,31 @@
 			},
 			"extData": null,
 			"lastUpdateTime": null
+		},
+		{
+			"date": "2022-09-27",
+			"today": {
+				"confirm": 29504,
+				"suspect": 0,
+				"heal": 0,
+				"dead": 0,
+				"severe": null,
+				"storeConfirm": 0,
+				"input": 72
+			},
+			"total": {
+				"confirm": 6942179,
+				"suspect": 0,
+				"heal": 339982,
+				"dead": 26244,
+				"severe": null,
+				"input": 23881,
+				"storeConfirm": 6575953
+			},
+			"extData": null,
+			"lastUpdateTime": null
 		}
 	],
-	"lastUpdateTime": "2022-09-26 09:28:35",
-	"overseaLastUpdateTime": "2022-09-26 12:35:38"
+	"lastUpdateTime": "2022-09-27 09:14:51",
+	"overseaLastUpdateTime": "2022-09-27 10:36:05"
 }
